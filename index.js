@@ -8,6 +8,7 @@ const { guessInterface } = require("./interfaces/guessageInterface");
 const { jokeInterface } = require("./interfaces/jokeInterface");
 const { calculate } = require("./module/calc");
 const { unzip } = require("./module/unzipper");
+const { down } = require("./module/downloader");
 const args = process.argv;
 if (args.length > 2) {
   switch (args[2]) {
@@ -43,6 +44,14 @@ if (args.length > 2) {
       break;
     case "cal":
       calculate(args);
+      break;
+    case "down":
+      let path = args[3];
+      try {
+        down(path);
+      } catch (error) {
+        return;
+      }
       break;
     default:
       console.error("Unknown command");

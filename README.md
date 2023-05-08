@@ -20,6 +20,12 @@ To use it as a calculator for simple computations,
 jvmt cal 3 + 2
 ```
 
+To download a file from link,
+
+```bash
+jvmt down <file path>
+```
+
 To unzip you files,
 
 ```bash
