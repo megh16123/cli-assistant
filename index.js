@@ -6,6 +6,7 @@ const { factGen } = require("./interfaces/catInterface");
 const { boredInterface } = require("./interfaces/boredInterface");
 const { guessInterface } = require("./interfaces/guessageInterface");
 const { jokeInterface } = require("./interfaces/jokeInterface");
+const { calculate } = require("./module/calc");
 const { unzip } = require("./module/unzipper");
 const args = process.argv;
 if (args.length > 2) {
@@ -39,6 +40,9 @@ if (args.length > 2) {
     case "--version":
     case "-v":
       console.log(pjson.version);
+      break;
+    case "cal":
+      calculate(args);
       break;
     default:
       console.error("Unknown command");
