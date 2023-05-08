@@ -1,9 +1,9 @@
+#!/usr/bin/env node
 const { factGen } = require("./interfaces/catInterface");
 const { boredInterface } = require("./interfaces/boredInterface");
 const { guessInterface } = require("./interfaces/guessageInterface");
 const { jokeInterface } = require("./interfaces/jokeInterface");
 const args = process.argv;
-
 if (args.length > 2) {
   switch (args[2]) {
     case "catfacts":
@@ -29,4 +29,6 @@ if (args.length > 2) {
     default:
       console.error("Unknown command");
   }
+} else {
+  console.error("Unknown command");
 }
