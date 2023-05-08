@@ -24,6 +24,9 @@ const main = async () => {
       case "joke":
         jokeInterface();
         break;
+      case "unzip":
+        console.log(__dirname);
+        break;
       default:
         console.error("Unknown command");
     }
