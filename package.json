@@ -1,6 +1,6 @@
 {
   "name": "jvmt",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "\"# cli-assistant\"",
   "main": "index.js",
   "bin": "./index.js",
@@ -10,6 +10,7 @@
   "author": "snoopycoder",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.4.0"
+    "axios": "^1.4.0",
+    "decompress": "^4.2.1"
   }
 }

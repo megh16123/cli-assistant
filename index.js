@@ -1,8 +1,10 @@
 #!/usr/bin/env node
+const path = require("path");
 const { factGen } = require("./interfaces/catInterface");
 const { boredInterface } = require("./interfaces/boredInterface");
 const { guessInterface } = require("./interfaces/guessageInterface");
 const { jokeInterface } = require("./interfaces/jokeInterface");
+const { unzip } = require("./module/unzipper");
 const args = process.argv;
 if (args.length > 2) {
   switch (args[2]) {
@@ -24,7 +26,13 @@ if (args.length > 2) {
       jokeInterface();
       break;
     case "unzip":
-      console.log(__dirname);
+      let source = path.join(process.cwd(), args[3]);
+      if (args.length == 5) {
+        let destination = path.join(process.cwd(), args[4]);
+        unzip(source, destination);
+      } else if (args.length == 4) {
+        unzip(source,process.cwd());
+      }
       break;
     default:
       console.error("Unknown command");
