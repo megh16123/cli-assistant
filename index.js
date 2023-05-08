@@ -1,5 +1,5 @@
 const { factGen } = require("./interfaces/catInterface");
-
+const { boredInterface } = require("./interfaces/boredInterface");
 const args = process.argv;
 
 const main = async () => {
@@ -12,6 +12,11 @@ const main = async () => {
       case "catfact":
         factGen(false, 0);
         break;
+      case "bored":
+        boredInterface();
+        break;
+      default:
+        console.error("Unknown command");
     }
   }
 };
