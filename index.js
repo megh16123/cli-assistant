@@ -1,5 +1,6 @@
 const { factGen } = require("./interfaces/catInterface");
 const { boredInterface } = require("./interfaces/boredInterface");
+const { guessInterface } = require("./interfaces/guessageInterface");
 const args = process.argv;
 
 const main = async () => {
@@ -14,6 +15,10 @@ const main = async () => {
         break;
       case "bored":
         boredInterface();
+        break;
+      case "guessmyage":
+        let name = args[3];
+        guessInterface(name);
         break;
       default:
         console.error("Unknown command");
