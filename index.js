@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 const path = require("path");
+
+const pjson = require("./package.json");
 const { factGen } = require("./interfaces/catInterface");
 const { boredInterface } = require("./interfaces/boredInterface");
 const { guessInterface } = require("./interfaces/guessageInterface");
@@ -31,8 +33,12 @@ if (args.length > 2) {
         let destination = path.join(process.cwd(), args[4]);
         unzip(source, destination);
       } else if (args.length == 4) {
-        unzip(source,process.cwd());
+        unzip(source, process.cwd());
       }
+      break;
+    case "--version":
+    case "-v":
+      console.log(pjson.version);
       break;
     default:
       console.error("Unknown command");
