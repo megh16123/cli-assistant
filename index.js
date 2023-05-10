@@ -3,6 +3,7 @@ const path = require("path");
 
 const pjson = require("./package.json");
 const { factGen } = require("./interfaces/catInterface");
+const player = require("play-sound")((opts = {}));
 const { boredInterface } = require("./interfaces/boredInterface");
 const { guessInterface } = require("./interfaces/guessageInterface");
 const { jokeInterface } = require("./interfaces/jokeInterface");
@@ -52,6 +53,14 @@ if (args.length > 2) {
       } catch (error) {
         return;
       }
+      break;
+    case "timer":
+      let time = parseInt(args[3]);
+      setTimeout(() => {
+        player.play("./media/alarmy.mp3", (err) => {
+          console.log(err);
+        });
+      }, time* 60000);
       break;
     default:
       console.error("Unknown command");
